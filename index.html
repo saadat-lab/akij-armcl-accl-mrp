@@ -16,8 +16,15 @@ th:first-child{border-top-left-radius:6px} th:last-child{border-top-right-radius
 td{padding:6px;border-bottom:1px solid #eee;text-align:center}td.l{text-align:left;font-weight:bold}
 tr:nth-child(even) td{background:#fafaf8}
 #allRm thead th{top:0}
-/* ensure scroll containers clip correctly */
-div[style*="overflow:auto"]{border-radius:6px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+/* All RM — freeze header row + first two columns (Material, ABC) on horizontal scroll */
+#allRm th:nth-child(1), #allRm td:nth-child(1){position:sticky;left:0;z-index:3;min-width:160px;max-width:160px}
+#allRm th:nth-child(2), #allRm td:nth-child(2){position:sticky;left:160px;z-index:3;min-width:45px;max-width:45px}
+#allRm thead th:nth-child(1){z-index:5;left:0}
+#allRm thead th:nth-child(2){z-index:5;left:160px}
+#allRm td:nth-child(1), #allRm td:nth-child(2){background:var(--w);box-shadow:2px 0 3px rgba(0,0,0,.08)}
+#allRm tr:nth-child(even) td:nth-child(1), #allRm tr:nth-child(even) td:nth-child(2){background:#fafaf8}
+/* ensure scroll containers clip correctly and allow both scrolls */
+div[style*="overflow:auto"]{border-radius:6px;box-shadow:0 1px 3px rgba(0,0,0,.08);overflow:auto}
 .badge{padding:2px 8px;border-radius:3px;font-size:11px;font-weight:bold}
 .b-blk{background:#DDE7F0;color:var(--blue)}.b-spt{background:#E3F1EA;color:var(--green)}.b-urg{background:#FBEAE8;color:var(--red)}
 select{padding:7px 10px;border:1px solid #ccc;border-radius:4px;font-size:13px;width:100%;margin-bottom:12px}
