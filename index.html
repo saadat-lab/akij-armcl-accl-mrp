@@ -10,10 +10,14 @@ h1{font-family:Cambria,serif;font-size:26px;margin:0 0 4px}h2{font-family:Cambri
 .kpi .v{font-family:Cambria,serif;font-size:22px;font-weight:bold}.kpi .l{font-size:11px;color:var(--slate)}
 .banner{padding:10px 14px;border-radius:4px;margin-bottom:10px;font-size:13px}
 .red-b{background:#FBEAE8;color:var(--red)}.amber-b{background:#F3E1CB;color:#7A4A10}
-table{width:100%;border-collapse:collapse;background:var(--w);border-radius:6px;box-shadow:0 1px 3px rgba(0,0,0,.08);font-size:12px;margin-bottom:16px}
-th{background:var(--ink);color:#fff;padding:8px 6px;text-align:center;font-size:11px}
+table{width:100%;border-collapse:separate;border-spacing:0;background:var(--w);border-radius:6px;box-shadow:0 1px 3px rgba(0,0,0,.08);font-size:12px;margin-bottom:16px}
+th{background:var(--ink);color:#fff;padding:8px 6px;text-align:center;font-size:11px;position:sticky;top:0;z-index:2;box-shadow:0 2px 2px rgba(0,0,0,.15)}
+th:first-child{border-top-left-radius:6px} th:last-child{border-top-right-radius:6px}
 td{padding:6px;border-bottom:1px solid #eee;text-align:center}td.l{text-align:left;font-weight:bold}
 tr:nth-child(even) td{background:#fafaf8}
+#allRm thead th{top:0}
+/* ensure scroll containers clip correctly */
+div[style*="overflow:auto"]{border-radius:6px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
 .badge{padding:2px 8px;border-radius:3px;font-size:11px;font-weight:bold}
 .b-blk{background:#DDE7F0;color:var(--blue)}.b-spt{background:#E3F1EA;color:var(--green)}.b-urg{background:#FBEAE8;color:var(--red)}
 select{padding:7px 10px;border:1px solid #ccc;border-radius:4px;font-size:13px;width:100%;margin-bottom:12px}
